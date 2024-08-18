@@ -6,13 +6,11 @@ def add_contact():
     name = input("Enter name: ")
     phone = input("Enter phone number: ")
     email = input("Enter email address: ")
-    address = input("Enter physical address: ")
 
     contact = {
         "name": name,
         "phone": phone,
-        "email": email,
-        "address": address
+        "email": email
     }
 
     contacts.append(contact)
@@ -35,7 +33,7 @@ def search_contact():
         print("No contacts found.")
     else:
         for contact in found_contacts:
-            print(f"Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']}, Address: {contact['address']}")
+            print(f"Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']}")
 
 def update_contact():
     view_contacts()
@@ -48,8 +46,7 @@ def update_contact():
         contact['name'] = input(f"Enter new name ({contact['name']}): ") or contact['name']
         contact['phone'] = input(f"Enter new phone number ({contact['phone']}): ") or contact['phone']
         contact['email'] = input(f"Enter new email address ({contact['email']}): ") or contact['email']
-        contact['address'] = input(f"Enter new physical address ({contact['address']}): ") or contact['address']
-
+        
         print("Contact updated successfully!")
     else:
         print("Invalid contact number.")
